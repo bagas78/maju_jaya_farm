@@ -223,24 +223,24 @@ $("#reservation").val('-- Tanggal --');
 function notif(){
 
     //pembelian
-    // $.get('<?=base_url('notifikasi/pembelian')?>', function(data) {
+    $.get('<?=base_url('notifikasi/pembelian')?>', function(data) {
         
-    //     if (parseInt(data) > 0) {
-    //         $('.pembelian_notif').css('display', '');
-    //         $('.hutang_notif').text(data).css('display', '');
-    //     }
+        if (parseInt(data) > 0) {
+            $('.pembelian_notif').css('display', '');
+            $('.hutang_notif').text(data).css('display', '');
+        }
 
-    // });
+    });
 
     //penjualan
-    // $.get('<?=base_url('notifikasi/penjualan')?>', function(data) {
+    $.get('<?=base_url('notifikasi/penjualan')?>', function(data) {
         
-    //     if (parseInt(data) > 0) {
-    //         $('.penjualan_notif').css('display', '');
-    //         $('.piutang_notif').text(data).css('display', '');
-    //     }
+        if (parseInt(data) > 0) {
+            $('.penjualan_notif').css('display', '');
+            $('.piutang_notif').text(data).css('display', '');
+        }
 
-    // });
+    });
 
     if ('<?=$this->session->userdata('level');?>' != 1) {
 
